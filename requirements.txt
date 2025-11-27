@@ -1,0 +1,8 @@
+flask
+easyocr
+pdf2image
+transformers
+torch
+opencv-python-headless
+waitress
+Pillow

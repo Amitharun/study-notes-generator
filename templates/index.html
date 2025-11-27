@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AI Notes Summariser — v2</title>
+  <link rel="stylesheet" href="/static/style.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>AI Notes Summariser</h1>
+      <p class="muted">Separate areas for text and files. Click <strong>Summarize</strong> to see progress.</p>
+    </header>
+
+    <section class="grid">
+      <div class="card">
+        <h2>Text Input</h2>
+        <textarea id="textInput" placeholder="Paste or type text here..."></textarea>
+        <div class="hint">Use this if you already have text (notes, lecture transcript, article).</div>
+      </div>
+
+      <div class="card">
+        <h2>Image / PDF Upload</h2>
+        <label class="filedrop" id="dropzone">Drop file here or click to choose
+          <input type="file" id="fileInput" accept=".pdf,.png,.jpg,.jpeg,.bmp,.tiff" hidden>
+        </label>
+        <div id="fileInfo" class="hint">No file chosen.</div>
+        <div class="hint">Use this to upload scanned notes or images.</div>
+      </div>
+    </section>
+
+    <div class="actions">
+      <button id="summarizeBtn" class="primary">Summarize</button>
+      <button id="clearBtn" class="ghost">Clear</button>
+    </div>
+
+    <section id="progressSection" class="card hide">
+      <div class="progressRow">
+        <div id="progressText">Preparing to summarize...</div>
+        <div class="progressBar"><div id="progressFill"></div></div>
+      </div>
+    </section>
+
+    <section id="result" class="card hide">
+      <h2>Summary</h2>
+      <ul id="bullets"></ul>
+      <div class="result-actions">
+        <button id="downloadBtn">Download TXT</button>
+        <button id="copyBtn">Copy</button>
+      </div>
+    </section>
+
+    <footer class="muted small">Runs locally. If you see a server warning about development server, it's normal — we've configured waitress to reduce that.</footer>
+  </main>
+
+  <script src="/static/script.js"></script>
+</body>
+</html>
